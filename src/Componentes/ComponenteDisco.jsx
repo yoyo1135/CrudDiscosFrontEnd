@@ -1,59 +1,58 @@
-import React from 'react'
+import React from 'react';
 
-const ComponenteDisco = ()=> {
+const ComponenteDisco = () => {
   const dummydata = [
-
     {
         "id": 1,
-        "artista" : "artista1",
-        "tituo" : "el mejor disco",
-        "duracion":30,
+        "artista": "artista1",
+        "titulo": "el mejor disco",
+        "duracion": 30,
         "cod": "abc 213"
-   
     },
-     {
+    {
        "id": 2,
-       "artista" : "artista2",
-       "tituo" : "el mejor disco",
-       "duracion":30,
+       "artista": "artista2",
+       "titulo": "el mejor disco",
+       "duracion": 30,
        "cod": "abc 213"
-   
     },
     {
        "id": 3,
-       "artista" : "artista3",
-       "tituo" : "el mejor disco",
-       "duracion":30,
+       "artista": "artista3",
+       "titulo": "el mejor disco",
+       "duracion": 30,
        "cod": "abc 213"
-   
     }
+  ];
 
-
-
-
-  ]
-  
-
-
-    return (
+  return (
     <div>
-        <table>
+        <table >
             <thead>
                 <tr>
                     <th>id</th>
                     <th>Artista</th>
                     <th>Titulo</th>
                     <th>Duracion</th>    
-                    <th>codigo</th>
+                    <th>Codigo</th>
                 </tr>    
             </thead>    
-        <tbody>
-            {
-                
+            <tbody>
+                {dummydata.map(disco => (
+                    <tr key={disco.id}>
+                        <td>{disco.id}</td>
+                        <td>{disco.artista}</td>
+                        <td>{disco.titulo}</td>
+                        <td>{disco.duracion}</td>
+                        <td>{disco.cod}</td>
+                    </tr>
+                )
+             )
             }
-        </tbody>
+            </tbody>
         </table>
     </div>
-    )
-}
+  );
+};
+
 export default ComponenteDisco;
